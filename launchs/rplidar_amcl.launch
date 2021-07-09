@@ -1,0 +1,49 @@
+<!-- Frames: -->
+<!-- base_link <- Robot Center -->
+<!-- odom <- XYIMU system -->
+<!-- laser <- Lidar -->
+<!-- map <- map(?) -->
+<!-- world <- world (same as map?) -->
+
+<launch>
+	<arg name="tf_map_scanmatch_transform_frame_name" default="scanmatcher_frame"/>
+	<arg name="base_frame" default="base_link"/>
+	<arg name="odom_frame" default="odom"/>
+	<arg name="laser_frame" default="laser"/>
+	<arg name="pub_map_odom_transform" default="true"/>
+	<arg name="scan_subscriber_queue_size" default="5"/>
+	<arg name="scan_topic" default="/scan"/>
+	<arg name="map_topic" default="/map"/> 
+	<arg name="map_size" default="1024"/>
+	<arg name="marker_address" default="visualization_marker"/>
+	
+<!--TF package-->
+	<node pkg="tf" type="static_transform_publisher" name="world2map_broadcaster" args="0 0 0 0 0 0 world map 100"/>
+	<node pkg="tf" type="static_transform_publisher" name="odom2base_broadcaster" args="0 0 0 0 0 0 odom base_link 100"/>
+	<!-- <node pkg="tf" type="static_transform_publisher" name="laser2base_broadcaster" args="0 0 0 0 0 0 laser base_link 100"/> -->
+	<!-- <node pkg="tf" type="static_transform_publisher" name="base2odom_broadcaster" args="0 0 0 0 0 0 base_link odom 100"/> -->
+	<node pkg="tf" type="static_transform_publisher" name="base2laser_broadcaster" args="0 0 0 0 0 0 base_link laser 100"/>
+	<!-- <node pkg="map_server" type="map_server" name="map_server" args="map.yaml"/> -->
+    
+	<node name="rplidarNode"          pkg="rplidar_ros"  type="rplidarNode" output="screen">
+	<param name="serial_port"         type="string" value="/dev/ttyUSB0"/>  
+	<param name="serial_baudrate"     type="int"    value="256000"/><!--A3 -->
+	<param name="frame_id"            type="string" value="$(arg laser_frame)"/>
+	<param name="inverted"            type="bool"   value="false"/>
+	<param name="angle_compensate"    type="bool"   value="true"/>
+	<param name="scan_mode"           type="string" value="Sensitivity"/> 
+	<!-- Standard -->
+	</node>
+    
+    <node name="map_server" pkg="map_server" type="map_server" args="/home/auv01/map.yaml"/>
+	
+    <node pkg="amcl" type="amcl" name="amcl">
+        
+		<param name="global_frame_id" value="map" />
+		<param name="base_frame_id" value="$(arg base_frame)" />
+		<param name="odom_frame_id" value="$(arg odom_frame)" />
+
+        <param name="use_map_topic" value="true" />
+    </node>
+
+</launch>

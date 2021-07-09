@@ -1,8 +1,0 @@
-prefix=/home/auv01/catkin_ws/devel
-
-Name: odom_to_tf
-Description: Description of odom_to_tf
-Version: 0.0.0
-Cflags: 
-Libs: -L${prefix}/lib 
-Requires: 

@@ -1,8 +1,0 @@
-prefix=/home/auv01/catkin_ws/devel
-
-Name: quickmcl
-Description: Description of quickmcl
-Version: 0.5.0
-Cflags: -I/home/auv01/catkin_ws/devel/include -I/home/auv01/catkin_ws/src/quickmcl/include -I/usr/include/eigen3
-Libs: -L${prefix}/lib -lquickmcl
-Requires: geometry_msgs nav_msgs pcl_ros roscpp sensor_msgs std_srvs tf2
