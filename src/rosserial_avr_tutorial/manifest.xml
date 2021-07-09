@@ -1,0 +1,12 @@
+<package>
+  <description brief="rosserial_avr_tutorial">
+
+     rosserial_avr_tutorial
+
+  </description>
+  <author>auv01</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/rosserial_avr_tutorial</url>
+
+</package>
