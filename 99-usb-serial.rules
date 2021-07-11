@@ -1,0 +1,2 @@
+KERNEL=="ttyUSB*", ATTRS{product}=="CP2102 USB to UART Bridge Controller", SYMLINK+="lidar0"
+KERNEL=="ttyUSB*", ATTRS{product}=="USB-Serial Controller D", SYMLINK+="imu0"
