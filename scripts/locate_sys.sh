@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 echo "Start launching lidar system"
 echo "Launching roscore"
-roscore &> logs/roscore &
+roscore
 sleep 10
 echo "Launching 1xrplidar.launch(lidar and odom)"
 roslaunch 1xrplidar.launch &> logs/lidar &
