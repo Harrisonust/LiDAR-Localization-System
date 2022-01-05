@@ -3,7 +3,7 @@
 ## ROS requirments
 Either run rosinstall.sh under scripts folder(recommended)
 ```command
-bash rosinstall.sh
+bash scripts/rosinstall.sh
 ```
 or follow the[ Official Installaton guide](http://wiki.ros.org/melodic/Installation/Ubuntu)
 
