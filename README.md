@@ -13,27 +13,34 @@ or follow the[ Official Installaton guide](http://wiki.ros.org/melodic/Installat
 ## Assign Static USB port for ROS
 By copy the predefined rules to system:
 ```command
-cp 99-usb-serial-rules /etc/udev/rules.d/
+sudo cp 99-usb-serial-rules /etc/udev/rules.d/
 ```
 Or follow the [guide](https://msadowski.github.io/linux-static-port/) here:
 
+## Run ROS package
+```command
+roscore
+rosrun <package-name> <executable-file>
+roslaunch <package-name> <launch-file> # choose one to use, depends on what u r trying to run
+```
 
 ## Run lidar locationing system 
-TODO!!!
 
 It can be run in a single script:
 ```command 
 cd ~/home/catkin_ws/launches
 bash locate_sys.sh
 ```
-however it is relatively hard to debug, when debugging, run the following commands instead.
+## Other useful stuff
+
+### Permission deny when accessing device
+```command
+sudo chmod 777 /dev/ttyUSB0
+```
+
+### Visualizing tools
 ```command 
-roscore # wait for about 5 to 10 seconds for ros to set everything up before running any other launch/package
-
-#open another terminal
-cd ~/home/catkin_ws/launches
-roslaunch 1xrplidar.launch
-
-#open another terminal
-rviz
+rosrun rviz rviz
+rosrun rqt_graph rqt_graph
+rosrun rqt_tf_tree rqt_tf_tree
 ```
