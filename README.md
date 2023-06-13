@@ -1,13 +1,13 @@
-# Lidar-locationing-system
+# LIDAR-locating-system
 
-This project aims to develop and deploy a robust localization system for high-speed robots using ROS (Robot Operating System) and LIDAR (Light Detection and Ranging) data. By leveraging the capabilities of both ROS and LIDAR technology, we have successfully addressed the challenges associated with high-speed robot localization and achieved significant improvements over traditional methods relying solely on IMU (Inertial Measurement Unit) and encoder measurements.
+This project aims to develop and deploy a robust locating system for high-speed robots using ROS (Robot Operating System) and LIDAR (Light Detection and Ranging) data. By leveraging the capabilities of both ROS and LIDAR technology, we have successfully addressed the challenges associated with high-speed robot localization and achieved significant improvements over traditional methods relying solely on IMU (Inertial Measurement Unit) and encoder measurements.
 
 ## Features
-1. Enhanced Localization Accuracy: Our system incorporates LIDAR data to overcome the limitations of relying solely on IMU and encoder measurements. This integration allows for more precise and reliable localization of high-speed robots, resulting in reduced localization errors.
+1. Enhanced Locating Accuracy: Our system incorporates LIDAR data to overcome the limitations of relying solely on IMU and encoder measurements. This integration allows for more precise and reliable locating of high-speed robots, resulting in reduced locating errors.
 
-2. ROS Integration: We have leveraged the power of ROS, a flexible framework for writing robot software, to build our Lidar Locationing System. ROS provides a wide range of tools, libraries, and functionalities, enabling seamless integration with various robot hardware and software components.
+2. ROS Integration: We have leveraged the power of ROS, a flexible framework for writing robot software, to build our LIDAR Locating System. ROS provides a wide range of tools, libraries, and functionalities, enabling seamless integration with various robot hardware and software components.
 
-3. Real-Time Localization: The system is designed to operate in real-time, providing continuous and up-to-date localization information for the high-speed robot. This enables the robot to accurately perceive its position and orientation in dynamic environments, facilitating efficient and reliable navigation.
+3. Real-Time Locating: The system is designed to operate in real-time, providing continuous and up-to-date locational information for the high-speed robot. This enables the robot to accurately perceive its position and orientation in dynamic environments, facilitating efficient and reliable navigation.
 
 ## ROS requirments
 Download this repo together with ros by running folloiwing commands(recommended)
@@ -33,7 +33,7 @@ rosrun <package-name> <executable-file>
 roslaunch <package-name> <launch-file> # choose one to use, depends on what u r trying to run
 ```
 
-## Run lidar locationing system 
+## Run LIDAR locating system 
 
 It can be run in a single script:
 ```command 
